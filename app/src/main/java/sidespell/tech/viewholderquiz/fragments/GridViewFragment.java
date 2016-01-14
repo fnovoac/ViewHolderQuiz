@@ -1,22 +1,26 @@
 package sidespell.tech.viewholderquiz.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import sidespell.tech.viewholderquiz.MovieDetailsActivity;
 import sidespell.tech.viewholderquiz.R;
 import sidespell.tech.viewholderquiz.adapters.MoviesAdapter;
+import sidespell.tech.viewholderquiz.constants.Constants;
 import sidespell.tech.viewholderquiz.controllers.MoviesController;
 
 /**
  * A placeholder fragment containing a {@link android.widget.GridView}.
  */
-public class GridViewFragment extends Fragment {
+public class GridViewFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private GridView mGridView;
     private TextView mTvEmpty;
@@ -58,5 +62,15 @@ public class GridViewFragment extends Fragment {
         } else {
             mTvEmpty.setVisibility(View.GONE);
         }
+
+        // set item click listener
+        mGridView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(getActivity(), MovieDetailsActivity.class);
+        intent.putExtra(Constants.EXTRA_POSITION, position);
+        startActivity(intent);
     }
 }
