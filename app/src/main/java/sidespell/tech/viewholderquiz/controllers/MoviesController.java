@@ -23,7 +23,6 @@ public class MoviesController {
         mMovies.add(new Movie("Suicide Squad", "Action", "A secret government agency recruits imprisoned supervillains to execute dangerous black ops missions in exchange for clemency.", R.drawable.movie08));
         mMovies.add(new Movie("Assassin\'s Creed", "Action", "When Callum Lynch (Michael Fassbender) explores the memories of his ancestor Aguilar and gains the skills of a Master Assassin, he discovers he is a descendant of the secret Assassins society.", R.drawable.movie09));
         mMovies.add(new Movie("13 Hours: The Secret Soldiers of Benghazi", "Drama", "An American Ambassador is killed during an attack at a U.S. compound in Libya as a security team struggles to make sense out of the chaos.", R.drawable.movie10));
-
     }
 
     public List<Movie> getMovies() {
