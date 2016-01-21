@@ -12,4 +12,14 @@
         android:id="@+id/action_gridview"
         android:title="@string/action_gridview"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_recyclerList"
+        android:title="@string/action_recyclerview_list"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_recyclerGrid"
+        android:title="@string/action_recyclerview_grid"
+        app:showAsAction="never"/>
 </menu>

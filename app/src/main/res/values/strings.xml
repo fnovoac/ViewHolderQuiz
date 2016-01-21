@@ -4,4 +4,6 @@
     <string name="action_gridview">GridView</string>
     <string name="listview_empty">There\'s no item in the listview.</string>
     <string name="gridview_empty">There\'s no item in the gridview.</string>
+    <string name="action_recyclerview_list">RecyclerView - List</string>
+    <string name="action_recyclerview_grid">RecyclerView - Grid</string>
 </resources>
