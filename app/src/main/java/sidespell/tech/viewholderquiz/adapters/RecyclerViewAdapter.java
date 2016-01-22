@@ -1,6 +1,7 @@
 package sidespell.tech.viewholderquiz.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import sidespell.tech.viewholderquiz.MovieDetailsActivity;
 import sidespell.tech.viewholderquiz.R;
+import sidespell.tech.viewholderquiz.constants.Constants;
 import sidespell.tech.viewholderquiz.entities.Movie;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MovieViewHolder> {
@@ -54,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mMovies.size();
     }
 
-    static class MovieViewHolder extends RecyclerView.ViewHolder {
+    static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public CardView  cardView;
         public ImageView imgMovie;
         public TextView  tvName;
@@ -66,6 +69,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             imgMovie = (ImageView) view.findViewById(R.id.imgMovie);
             tvName = (TextView) view.findViewById(R.id.tvName);
             tvGenre = (TextView) view.findViewById(R.id.tvGenre);
+
+            // once an item view (list item or grid item) is clicked
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Context context = v.getContext();
+            Intent intent = new Intent(context, MovieDetailsActivity.class);
+
+            intent.putExtra(Constants.EXTRA_POSITION, getAdapterPosition());
+            context.startActivity(intent);
         }
     }
 }
